@@ -15257,7 +15257,7 @@ var varresul=0;
             _scene = new BABYLON.Scene(_engine);
             _scene.clearColor = BABYLON.Color3.Black;
 
-            _camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 0,-20), _scene);
+           // _camera = //new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 0,-20), _scene);
    // _camera.rotation = new BABYLON.Vector3(0, Math.PI, 0);;
             //new BABYLON.ArcRotateCamera("camera", 0, 0, 0, BABYLON.Vector3.Zero(), _scene);
            //new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2, 10, BABYLON.Vector3.Zero(),_scene);
@@ -15265,9 +15265,10 @@ var varresul=0;
           // new FreeCamera(name: string, position: Vector3, scene: Scene, setActiveOnSceneIfNoneActive?: boolean):
            //new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0,0, 0), _scene);
 
+           _camera=new BABYLON.ArcRotateCamera
+           ("ArcRotateCamera", 1, 0.8, 10, new BABYLON.Vector3(0, 0, 0), _scene);
 
-
-          // _camera.setPosition(new BABYLON.Vector3(0, 0, -20));
+          _camera.setPosition(new BABYLON.Vector3(0, 0, -20));
             _camera.attachControl(_canvas);
             _camera.inputs.attached.keyboard.detachControl();
 
@@ -15511,7 +15512,7 @@ varvalor="";
         });
         if (_mesh)
             _mesh.dispose();
-        _mesh = _text3d(data, size, parseFloat(10), _material, 0, 7, 0);
+        _mesh = _text3d(data, size, parseFloat(5), _material, 0, 7, 0);
         _isFinish = true;
     } else {
         alert("No Text[input]. Please input some text.");
